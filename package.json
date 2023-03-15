@@ -1,0 +1,26 @@
+{
+  "name": "my-teams-profiles",
+  "version": "1.0.0",
+  "description": "A profile for my team members",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanne37/My-Teams-Profiles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanne37/My-Teams-Profiles/issues"
+  },
+  "homepage": "https://github.com/jordanne37/My-Teams-Profiles#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
