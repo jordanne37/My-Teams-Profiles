@@ -1,7 +1,7 @@
 // const Employee = require("./lib/Employee.js");
-const Engineer = require("./lib/Engineer.js");
-const Intern = require("./lib/Intern.js");
-const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
 
 const genHTML = require("./src/template.js");
 
@@ -47,7 +47,7 @@ function addManager() {
 
         {
             type: "input",
-            name: "managerID",
+            name: "managerId",
             message: "What is the Manger's ID?"
         },
 
@@ -61,7 +61,86 @@ function addManager() {
             type: "input",
             name: "managerOfficeNumber",
             message: "What is the Manger's office number?"
+        }
+
+    ]).then(answers => {
+        const manager = new Manager(answers.managerName, answers.managerId, answer.managerEmail, answers.managerOfficeNumber);
+        teamArray.push(manager);
+        makeTeam();
+    });
+}
+
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engineerName",
+            message: "What is the Engineer's name?"
         },
 
-    ])
+        {
+            type: "input",
+            name: "engineerId",
+            message: "What is the Engineer's ID?"
+        },
+
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is the Engineer's Email?"
+        },
+
+        {
+            type: "input",
+            name: "engineerGitHub",
+            message: "What is the Engineer's Github?"
+        }
+    ]).then(answers => {
+        const engineer = new Engineer(answers.engineerName, answers.engineerId, answer.engineerEmail, answers.engineer.Github);
+        teamArray.push(engineer);
+        makeTeam();
+});
+
 }
+
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is the Intern's name?"
+        },
+
+        {
+            type: "input",
+            name: "internId",
+            message: "What is the Intern's ID?"
+        },
+
+        {
+            type: "input",
+            name: "internEmail",
+            message: "What is the Intern's Email?"
+        },
+
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What is the Intern's school?"
+        }
+    ]).then(answers => {
+        const intern = new Intern(answers.engineerName, answers.engineerId, answer.engineerEmail, answers.engineer.Github);
+        teamArray.push(intern);
+        makeTeam();
+});
+
+function genHTML() {
+    fs.writeFileSync()
+}
+
+
+}
+makeTeam();
+
+
+run();
