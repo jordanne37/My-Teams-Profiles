@@ -20,3 +20,26 @@ test("Test email of employee.", () => {
     expect(createEmployee.email).toBe(email);
 })
 
+
+
+
+test("Can test get name.", () => {
+    const testName = "Savannah";
+    const createEmployee = new Employee(testName);
+    expect(createEmployee.getName()).tobe(testName);
+})
+test("Can test get ID.", () => {
+    const testID = 1;
+    const createEmployee = new Employee("Savannah", testID);
+    expect(createEmployee.getId()).tobe(testId);
+})
+test("Can test get email.", () => {
+    const testEmail = "savannahquinn69@gmail.com";
+    const createEmployee = new Employee("Savannah", 1, testEmail);
+    expect(createEmployee.getEmail()).tobe(testEmail);
+})
+test("Test.", () => {
+    const returnVal = "Employee";
+    const createEmployee = new Employee("Savannah", 1, "savannahquinn69@gmail.com");
+    expect(createEmployee.getTest()).tobe(returnVal);
+})
