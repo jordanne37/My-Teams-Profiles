@@ -7,8 +7,8 @@ Test("Can I create a school.", () => {
     expect(createEmployee.school).toBe(testSchool);
 });
 
-Test("Can I create an office number.", () => {
-    const testSchool = "Rider University";
+Test("Testing school.", () => {
+    const testOffice = "Rider University";
     const createEmployee = new Intern("Savannah", 1, "savannahquinn69@gmail.com", testSchool);
     expect(createEmployee.getSchool()).toBe(testSchool);
 });
