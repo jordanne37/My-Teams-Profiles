@@ -1,4 +1,4 @@
-const generateManager = mananger => {
+const generateManager = manager => {
     return `
 <div class="employee-cards card">
     <div class="card-header bg-primary text-black">
