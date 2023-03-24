@@ -98,7 +98,7 @@ function addEngineer() {
             message: "What is the Engineer's Github?"
         }
     ]).then(answers => {
-        const engineer = new Engineer(answers.engineerName, answers.engineerId, answer.engineerEmail, answers.engineer.Github);
+        const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
         teamArray.push(engineer);
         makeTeam();
     });
@@ -131,19 +131,19 @@ function addIntern() {
             message: "What is the Intern's school?"
         }
     ]).then(answers => {
-        const intern = new Intern(answers.engineerName, answers.engineerId, answer.engineerEmail, answers.engineer.Github);
+        const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
         teamArray.push(intern);
         makeTeam();
     });
 
     function genHTML() {
-        fs.writeFileSync()
+        fs.writeFileSync(makeTeam)
     }
 
 
 
     makeTeam();
-
+    genHTML();
 }
 
 // run();
