@@ -11,33 +11,35 @@ const fs = require("fs");
 
 teamArray = [];
 
-function run() {
+// function run() {
 
-    function makeTeam() {
-    inquirer.createPromptModule([{
+// }
+function makeTeam() {
+    inquirer.prompt([{
+        name: "employeeType",
         type: "list",
         message: "What type of employee would you like to add as a team member?",
         choices: ["Manager", "Employee", "Engineer", "Intern", "N/A"]
-    }]).then(function(useInput){
-    switch(useInput.addPrompt) {
-        case "Manager":
-            addManager();
+    }]).then(function (useInput) {
+        switch (useInput.employeeType) {
+            case "Manager":
+                addManager();
+                break;
+            case "Intern":
 
-        case "Intern":
-
-            addIntern();
-        case "Engineer":
-            addEngineer;
-
-        default:
-            buildHTML();
-        }       
+                addIntern();
+                break;
+            case "Engineer":
+                addEngineer;
+                break;
+            default:
+                buildHTML();
+        }
     })
-}
 }
 
 function addManager() {
-    inquirer.prompt ([
+    inquirer.prompt([
 
         {
             type: "input",
@@ -64,7 +66,7 @@ function addManager() {
         }
 
     ]).then(answers => {
-        const manager = new Manager(answers.managerName, answers.managerId, answer.managerEmail, answers.managerOfficeNumber);
+        const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
         teamArray.push(manager);
         makeTeam();
     });
@@ -99,7 +101,7 @@ function addEngineer() {
         const engineer = new Engineer(answers.engineerName, answers.engineerId, answer.engineerEmail, answers.engineer.Github);
         teamArray.push(engineer);
         makeTeam();
-});
+    });
 
 }
 
@@ -132,15 +134,18 @@ function addIntern() {
         const intern = new Intern(answers.engineerName, answers.engineerId, answer.engineerEmail, answers.engineer.Github);
         teamArray.push(intern);
         makeTeam();
-});
+    });
 
-function genHTML() {
-    fs.writeFileSync()
+    function genHTML() {
+        fs.writeFileSync()
+    }
+
+
+
+    makeTeam();
+
 }
 
+// run();
 
-}
 makeTeam();
-
-
-run();
